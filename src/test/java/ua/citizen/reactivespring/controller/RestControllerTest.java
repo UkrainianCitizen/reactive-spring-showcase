@@ -15,7 +15,6 @@ import ua.citizen.reactivespring.service.PriceService;
 import ua.citizen.reactivespring.service.PurchaseService;
 
 @WebFluxTest
-@ExtendWith(SpringExtension.class)
 public class RestControllerTest {
 
     @Autowired
