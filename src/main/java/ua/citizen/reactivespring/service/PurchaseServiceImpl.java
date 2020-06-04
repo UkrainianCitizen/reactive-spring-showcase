@@ -3,10 +3,9 @@ package ua.citizen.reactivespring.service;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import ua.citizen.reactivespring.domain.Purchase;
 import ua.citizen.reactivespring.domain.PriceRepository;
+import ua.citizen.reactivespring.domain.Purchase;
 import ua.citizen.reactivespring.model.CoinBaseResponse;
-import java.time.LocalDateTime;
 
 @Service
 public class PurchaseServiceImpl implements PurchaseService {

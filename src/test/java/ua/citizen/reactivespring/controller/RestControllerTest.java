@@ -1,26 +1,18 @@
 package ua.citizen.reactivespring.controller;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 import ua.citizen.reactivespring.domain.Purchase;
 import ua.citizen.reactivespring.service.PriceService;
 import ua.citizen.reactivespring.service.PurchaseService;
-import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.List;
 
 @WebFluxTest
 @ExtendWith(SpringExtension.class)
