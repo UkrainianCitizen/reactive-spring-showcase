@@ -1,6 +1,5 @@
 package ua.citizen.reactivespring.config;
 
-import ua.citizen.reactivespring.controller.PurchaseController;
 import ua.citizen.reactivespring.domain.PriceRepository;
 import ua.citizen.reactivespring.service.CryptoService;
 import ua.citizen.reactivespring.service.CryptoServiceImpl;
