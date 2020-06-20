@@ -17,8 +17,8 @@ public class PurchaseController {
 
     private final PurchaseService purchaseService;
 
-    @PostMapping("/{name}")
-    public Mono<Purchase> createPurchase(@PathVariable("name") String name) {
-        return purchaseService.createPurchase(name);
+    @PostMapping("/{currency_pair}")
+    public Mono<Purchase> createPurchase(@PathVariable("currency_pair") String currencyPair) {
+        return purchaseService.createPurchase(currencyPair);
     }
 }

@@ -7,5 +7,5 @@ import ua.citizen.reactivespring.domain.Purchase;
 public interface PurchaseService {
     Mono<Purchase> getPurchaseById(String purchaseId);
     Flux<Purchase> listAll();
-    Mono<Purchase> createPurchase(String priceName);
+    Mono<Purchase> createPurchase(String currencyPair);
 }

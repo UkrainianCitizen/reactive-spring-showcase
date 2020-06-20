@@ -27,8 +27,8 @@ public class PurchaseServiceImpl implements PurchaseService {
     }
 
     @Override
-    public Mono<Purchase> createPurchase(String priceName) {
-        return priceService.getCryptoPrice(priceName).flatMap(price -> priceRepository.save(preparePurchase(priceName, price)));
+    public Mono<Purchase> createPurchase(String currencyPair) {
+        return priceService.getCryptoPrice(currencyPair).flatMap(price -> priceRepository.save(preparePurchase(currencyPair, price)));
     }
 
     private Purchase preparePurchase(String priceName, CoinBaseResponse response) {
