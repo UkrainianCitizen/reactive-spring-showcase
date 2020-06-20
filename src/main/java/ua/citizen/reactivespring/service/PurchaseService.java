@@ -1,7 +1,5 @@
 package ua.citizen.reactivespring.service;
 
-import javax.xml.ws.Response;
-
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import ua.citizen.reactivespring.domain.Purchase;

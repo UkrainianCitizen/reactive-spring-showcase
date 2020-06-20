@@ -1,7 +1,6 @@
 package ua.citizen.reactivespring.config;
 
-import ua.citizen.reactivespring.controller.PurchaseController;
-import ua.citizen.reactivespring.domain.PriceRepository;
+import ua.citizen.reactivespring.domain.PurchaseRepository;
 import ua.citizen.reactivespring.service.CryptoService;
 import ua.citizen.reactivespring.service.CryptoServiceImpl;
 import ua.citizen.reactivespring.service.PurchaseService;
@@ -15,7 +14,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class ApiConfig {
 
     @Bean
-    public PurchaseService priceService(PriceRepository repository) {
+    public PurchaseService priceService(PurchaseRepository repository) {
         return new PurchaseServiceImpl(repository);
     }
 

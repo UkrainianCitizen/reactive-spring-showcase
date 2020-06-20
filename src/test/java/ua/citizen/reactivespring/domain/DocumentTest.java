@@ -13,13 +13,13 @@ import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 public class DocumentTest {
 
     @Autowired
-    private PriceRepository priceRepository;
+    private PurchaseRepository purchaseRepository;
 
     @Test
     public void findByName() {
-        Flux<Purchase> flux = priceRepository.deleteAll()
+        Flux<Purchase> flux = purchaseRepository.deleteAll()
                 .thenMany(prepareFlux())
-                .thenMany(priceRepository.findByName("BTC2"));
+                .thenMany(purchaseRepository.findByName("BTC2"));
 
         StepVerifier.create(flux)
                 .thenConsumeWhile(prepareMatch())
@@ -36,6 +36,6 @@ public class DocumentTest {
         return Flux.just(new Purchase("BTC", "2"), new Purchase("BTC2", "1"),
                 new Purchase("BTC2", "5")
         )
-                .flatMap(priceRepository::save);
+                .flatMap(purchaseRepository::save);
     }
 }

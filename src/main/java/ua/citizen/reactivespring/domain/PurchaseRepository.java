@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 
 @Repository
-public interface PriceRepository extends ReactiveMongoRepository<Purchase, String> {
+public interface PurchaseRepository extends ReactiveMongoRepository<Purchase, String> {
     Flux<Purchase> findByName(String name);
 }
