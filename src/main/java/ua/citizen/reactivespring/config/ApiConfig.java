@@ -1,8 +1,12 @@
 package ua.citizen.reactivespring.config;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
+import ua.citizen.reactivespring.controller.PurchaseController;
+import ua.citizen.reactivespring.domain.PriceRepository;
+import ua.citizen.reactivespring.service.CryptoService;
+import ua.citizen.reactivespring.service.CryptoServiceImpl;
+import ua.citizen.reactivespring.service.PurchaseService;
+import ua.citizen.reactivespring.service.PurchaseServiceImpl;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -11,14 +15,13 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class ApiConfig {
 
     @Bean
-    public ObjectMapper objectMapper() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    public PurchaseService priceService(PriceRepository repository) {
+        return new PurchaseServiceImpl(repository);
     }
 
     @Bean
-    public ObjectWriter objectWriter(ObjectMapper objectMapper) {
-        return objectMapper.writerWithDefaultPrettyPrinter();
+    public CryptoService cryptoService() {
+        return new CryptoServiceImpl(webClient());
     }
 
     @Bean

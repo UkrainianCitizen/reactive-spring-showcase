@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.AllArgsConstructor;
 import reactor.core.publisher.Mono;
 import ua.citizen.reactivespring.domain.Purchase;
+import ua.citizen.reactivespring.service.CryptoService;
 import ua.citizen.reactivespring.service.PurchaseService;
 
 @RestController
@@ -16,9 +17,10 @@ import ua.citizen.reactivespring.service.PurchaseService;
 public class PurchaseController {
 
     private final PurchaseService purchaseService;
+    private final CryptoService cryptoService;
 
     @PostMapping("/{currency_pair}")
     public Mono<Purchase> createPurchase(@PathVariable("currency_pair") String currencyPair) {
-        return purchaseService.createPurchase(currencyPair);
+        return purchaseService.doPurchase(currencyPair, cryptoService.getCryptoPrice(currencyPair));
     }
 }

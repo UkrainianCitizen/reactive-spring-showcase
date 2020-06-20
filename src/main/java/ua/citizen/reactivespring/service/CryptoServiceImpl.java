@@ -1,15 +1,15 @@
 package ua.citizen.reactivespring.service;
 
-import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
-
 import lombok.AllArgsConstructor;
 import reactor.core.publisher.Mono;
 import ua.citizen.reactivespring.model.CoinBaseResponse;
 
+import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
+
 @Service
 @AllArgsConstructor
-public class PriceServiceImpl implements PriceService {
+public class CryptoServiceImpl implements CryptoService {
 
     private final WebClient webClient;
 
