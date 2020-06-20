@@ -4,4 +4,5 @@ import org.springframework.test.context.ActiveProfiles;
 @Configuration
 @ActiveProfiles("test")
 public class Config {
+
 }

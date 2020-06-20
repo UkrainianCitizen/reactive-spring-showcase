@@ -18,7 +18,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class WebConfig implements WebFluxConfigurer {
 
     @Autowired
-    PurchaseService purchaseService;
+    private PurchaseService purchaseService;
 
     @Bean
     public RouterFunction<ServerResponse> routerFunctionPurchase() {
@@ -30,6 +30,5 @@ public class WebConfig implements WebFluxConfigurer {
     public RouterFunction<ServerResponse> routerFunctionAllPurchases() {
         return route(GET("/coin/purchase/v1/"), request ->
             ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(purchaseService.listAll(), Purchase.class));
-
     }
 }

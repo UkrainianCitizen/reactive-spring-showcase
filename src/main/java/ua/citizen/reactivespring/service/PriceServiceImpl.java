@@ -2,17 +2,16 @@ package ua.citizen.reactivespring.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+
+import lombok.AllArgsConstructor;
 import reactor.core.publisher.Mono;
 import ua.citizen.reactivespring.model.CoinBaseResponse;
 
 @Service
+@AllArgsConstructor
 public class PriceServiceImpl implements PriceService {
 
     private final WebClient webClient;
-
-    public PriceServiceImpl(WebClient webClient) {
-        this.webClient = webClient;
-    }
 
     @Override
     public Mono<CoinBaseResponse> getCryptoPrice(String currencyPair) {
