@@ -1,5 +1,7 @@
 package ua.citizen.reactivespring.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
@@ -14,6 +16,7 @@ public class Purchase {
     private String name;
     private String price;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     private LocalDateTime createdAt = LocalDateTime.now();
 
     @Id
