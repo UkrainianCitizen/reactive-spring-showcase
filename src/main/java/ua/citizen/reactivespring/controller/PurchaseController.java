@@ -11,7 +11,6 @@ import ua.citizen.reactivespring.domain.Purchase;
 import ua.citizen.reactivespring.service.CryptoService;
 import ua.citizen.reactivespring.service.PurchaseService;
 
-@RestController
 @AllArgsConstructor
 @RequestMapping("/coin/purchase/v1")
 public class PurchaseController {

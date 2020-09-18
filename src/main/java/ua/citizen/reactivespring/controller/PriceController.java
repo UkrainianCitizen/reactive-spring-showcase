@@ -10,7 +10,6 @@ import reactor.core.publisher.Mono;
 import ua.citizen.reactivespring.model.CoinBaseResponse;
 import ua.citizen.reactivespring.service.CryptoService;
 
-@RestController
 @AllArgsConstructor
 @RequestMapping("/coin/price/v1")
 public final class PriceController {
